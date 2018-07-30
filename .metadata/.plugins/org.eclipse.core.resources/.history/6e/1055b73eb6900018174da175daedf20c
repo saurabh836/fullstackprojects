@@ -1,0 +1,20 @@
+package com.emptracking.EmpDAOI;
+import com.emptracking.*;
+import java.util.*;
+import java.sql.*;
+
+public class EmpDAOI {
+	
+	/*public static Connection getConnection()
+	{
+		
+		
+	}
+	*/
+	
+	
+	
+
+	
+
+}

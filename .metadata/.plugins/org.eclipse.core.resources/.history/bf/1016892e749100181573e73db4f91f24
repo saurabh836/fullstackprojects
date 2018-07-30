@@ -1,0 +1,75 @@
+package com.emp.projectDAO;
+
+import java.io.PrintWriter;
+import java.sql.*;
+
+import com.niit.skillmap.config.DBConfig;
+
+//import com.niit.project.model.Employee;
+
+public class EmpDaoi {
+	
+	Connection connection=null;
+	
+	public EmpDaoi() {
+		connection=DBConfig.getConnection();
+	}
+	
+	
+	public static int userlogin(Employee e)
+	{
+		int status=0;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");  
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_records","root","123456789");  
+			System.out.println("Connected");
+			Statement stmt=con.createStatement();  
+			ResultSet rs=stmt.executeQuery("select * from empskillset where emailid='"+e.getemailid()+"' and password='"+e.getpassword()+"'");
+		if(rs.next())
+		{
+		System.out.println("Login successful!");
+		status=1;
+		}
+		con.close();
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		
+		return status;
+	}
+	
+	public int insert(Employee e)
+	{
+		int status=0;
+		
+		try {
+			 
+			PreparedStatement p = con.prepareStatement("insert into empskillset values( ?,?,?,?,?,?,?);");
+			p.setInt(1,e.getempid());
+			p.setString(2,e.getempname());
+			p.setString(3,e.getemailid());
+			p.setString(4, e.getpassword());
+			p.setString(5, e.getphoneno());
+			p.setString(6, e.getrole());
+			//p.setString(7, "false");
+			p.setBoolean(7, false);
+
+			status = p.executeUpdate();
+			
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return status;
+	}
+
+
+	public Employee getEmploeeByLogin(String userName,String Password)
+	{
+		
+	}
+}

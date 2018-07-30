@@ -1,0 +1,5 @@
+package com.niit.skillmap.DAO;
+
+public class Employee {
+
+}

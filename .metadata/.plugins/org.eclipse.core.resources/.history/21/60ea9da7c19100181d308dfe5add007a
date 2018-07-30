@@ -1,0 +1,5 @@
+package com.niit.skillmap.config;
+
+public class DBConfig {
+
+}

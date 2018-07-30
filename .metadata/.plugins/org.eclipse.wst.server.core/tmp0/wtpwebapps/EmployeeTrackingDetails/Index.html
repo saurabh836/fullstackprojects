@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Add Employee</h1>  
+<form action="SaveServlet" method="post">  
+<table>  
+<tr><td>Id:</td><td><input type="text" name="eid"/></td></tr>
+<tr><td>Name:</td><td><input type="text" name="ename"/></td></tr> 
+<tr><td>Designation:</td><td>  
+<select name="edesignation" style="width:150px">  
+<option>Sr.Tester</option>  
+<option>Jr.Tester</option>  
+<option>SoftEng</option>  
+<option>Sr.Soft Developer</option>  
+</select>  
+</td></tr>   
+<tr><td>Salary:</td><td><input type="text" name="esalary"/></td></tr>  
+
+<tr><td colspan="2"><input type="submit" value="SaveEmployee"/></td></tr>  
+</table>  
+</form>  
+  
+<br/>  
+<a href="ViewServlet">Display Employee Details</a>  
+  
+
+</body>
+</html>
